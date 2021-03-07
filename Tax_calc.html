@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<label for="income">Marital status</label>
+<select name="" id="status">
+<option value="single">single</option>
+<option value="married">married</option>
+
+</select>
+</br>
+<label for="income">Income</label>
+<input type="number" name="income" id="income">
+</br><br>
+<button onclick="calculator()">Submit</button>
+
+<div class="result" id="result">
+<p class="item" id="res"></p>
+</div>
+
+<script>
+function calculator(){
+var data = document.getElementById('income').value;
+var getstatus = document.getElementById('status').value
+//check for married status
+if(getstatus == "single"){
+if(data >2000 && data<=4000){
+var tax = data*(0.01)
+var t = document.createTextNode(tax);
+document.getElementById('res').appendChild(t);
+
+}else if(data <=2000){
+var tax = data*(0.10)
+var t = document.createTextNode(tax);
+document.getElementById('res').appendChild(t);
+}else{
+
+}
+
+}else{
+if(data >2000 && data<=4500){
+var tax = data*(0.01)
+var t = document.createTextNode(tax);
+document.getElementById('res').appendChild(t);
+}
+}
+
+
+}
+
+</script>
+
+</body>
+</html>
